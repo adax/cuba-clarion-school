@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.clarionschool.web.students.StudentsEdit"
+        datasource="studentsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.clarionschool.web.students">
+    <dsContext>
+        <datasource id="studentsDs"
+                    class="com.company.clarionschool.entity.Students"
+                    view="students-view"/>
+        <collectionDatasource id="majorsDs"
+                              class="com.company.clarionschool.entity.Majors"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from clarionschool$Majors e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox"
+            spacing="true">
+        <scrollBox id="scrollBox"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="studentsDs">
+                <column width="250px">
+                    <field property="number"/>
+                    <field property="firstName"/>
+                    <field property="lastName"/>
+                    <field property="address"/>
+                    <field property="address2"/>
+                    <field property="city"/>
+                    <field property="state"/>
+                    <field property="zip"/>
+                    <field property="telephone"/>
+                    <field optionsDatasource="majorsDs"
+                           property="major"/>
+                    <field property="gradYear"/>
+                </column>
+            </fieldGroup>
+        </scrollBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

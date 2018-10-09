@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.clarionschool.web.teachers.TeachersBrowse"
+        focusComponent="teachersesTable"
+        lookupComponent="teachersesTable"
+        messagesPack="com.company.clarionschool.web.teachers">
+    <dsContext>
+        <groupDatasource id="teachersesDs"
+                         class="com.company.clarionschool.entity.Teachers"
+                         view="teachers-view">
+            <query>
+                <![CDATA[select e from clarionschool$Teachers e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="teachersesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="teachersesTable"
+                datasource="teachersesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="teachersesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="department"/>
+                <column id="lastName"/>
+                <column id="firstName"/>
+                <column id="address"/>
+                <column id="city"/>
+                <column id="state"/>
+                <column id="zip"/>
+                <column id="telephone"/>
+            </columns>
+            <rows datasource="teachersesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="teachersesTable.create"/>
+                <button id="editBtn"
+                        action="teachersesTable.edit"/>
+                <button id="removeBtn"
+                        action="teachersesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

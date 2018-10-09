@@ -1,0 +1,2 @@
+alter table CLARIONSCHOOL_CLASSES drop column COURSE_NUMBER__U14041 cascade ;
+alter table CLARIONSCHOOL_CLASSES drop column TEACHER_NUMBER_NUMBER__U39075 cascade ;

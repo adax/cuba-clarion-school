@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.clarionschool.web.majors.MajorsBrowse"
+        focusComponent="majorsesTable"
+        lookupComponent="majorsesTable"
+        messagesPack="com.company.clarionschool.web.majors">
+    <dsContext>
+        <groupDatasource id="majorsesDs"
+                         class="com.company.clarionschool.entity.Majors"
+                         view="_local">
+            <query>
+                <![CDATA[select e from clarionschool$Majors e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="majorsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="majorsesTable"
+                datasource="majorsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="majorsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="description"/>
+            </columns>
+            <rows datasource="majorsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="majorsesTable.create"/>
+                <button id="editBtn"
+                        action="majorsesTable.edit"/>
+                <button id="removeBtn"
+                        action="majorsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

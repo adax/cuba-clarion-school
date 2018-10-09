@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.clarionschool.web.enrollment.EnrollmentBrowse"
+        focusComponent="enrollmentsTable"
+        lookupComponent="enrollmentsTable"
+        messagesPack="com.company.clarionschool.web.enrollment">
+    <dsContext>
+        <groupDatasource id="enrollmentsDs"
+                         class="com.company.clarionschool.entity.Enrollment"
+                         view="enrollment-view">
+            <query>
+                <![CDATA[select e from clarionschool$Enrollment e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="enrollmentsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="enrollmentsTable"
+                datasource="enrollmentsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="enrollmentsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="student"/>
+                <column id="student.lastName"/>
+                <column id="student.firstName"/>
+                <column id="midtermExam"/>
+                <column id="finalExam"/>
+                <column id="termPaper"/>
+            </columns>
+            <rows datasource="enrollmentsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="enrollmentsTable.create"/>
+                <button id="editBtn"
+                        action="enrollmentsTable.edit"/>
+                <button id="removeBtn"
+                        action="enrollmentsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="clarion-school"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.clarionschool.entity.Classes</class>
+        <class>com.company.clarionschool.entity.Courses</class>
+        <class>com.company.clarionschool.entity.Majors</class>
+        <class>com.company.clarionschool.entity.Students</class>
+        <class>com.company.clarionschool.entity.Teachers</class>
+        <class>com.company.clarionschool.entity.Enrollment</class>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.clarionschool.web.teachers.TeachersEdit"
+        datasource="teachersDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.clarionschool.web.teachers">
+    <dsContext>
+        <datasource id="teachersDs"
+                    class="com.company.clarionschool.entity.Teachers"
+                    view="teachers-view"/>
+        <collectionDatasource id="departmentsDs"
+                              class="com.company.clarionschool.entity.Majors"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from clarionschool$Majors e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="teachersDs">
+            <column width="250px">
+                <field property="number"/>
+                <field property="firstName"/>
+                <field property="lastName"/>
+                <field property="address"/>
+                <field property="city"/>
+                <field property="state"/>
+                <field property="zip"/>
+                <field property="telephone"/>
+                <field optionsDatasource="departmentsDs"
+                       property="department"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

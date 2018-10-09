@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.company.clarionschool.entity.Classes"
+          extends="_local"
+          name="classes-view">
+        <property name="course"
+                  view="_minimal"/>
+        <property name="teacher"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.clarionschool.entity.Students"
+          extends="_local"
+          name="students-view">
+        <property name="major"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.clarionschool.entity.Teachers"
+          extends="_local"
+          name="teachers-view">
+        <property name="department"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.clarionschool.entity.Enrollment"
+          extends="_local"
+          name="enrollment-view">
+        <property name="student"
+                  view="_minimal"/>
+        <property name="classNumber"
+                  view="_minimal">
+            <property name="course"
+                      view="_minimal"/>
+        </property>
+    </view>
+</views>

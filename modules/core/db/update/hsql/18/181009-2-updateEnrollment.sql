@@ -1,0 +1,2 @@
+alter table CLARIONSCHOOL_ENROLLMENT alter column FINAL_EXAM_COPY rename to FINAL_EXAM_COPY__U44750 ^
+alter table CLARIONSCHOOL_ENROLLMENT add column FINAL_EXAM integer ;

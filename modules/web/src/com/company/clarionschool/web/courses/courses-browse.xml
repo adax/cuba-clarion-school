@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.clarionschool.web.courses.CoursesBrowse"
+        focusComponent="coursesesTable"
+        lookupComponent="coursesesTable"
+        messagesPack="com.company.clarionschool.web.courses">
+    <dsContext>
+        <groupDatasource id="coursesesDs"
+                         class="com.company.clarionschool.entity.Courses"
+                         view="_local">
+            <query>
+                <![CDATA[select e from clarionschool$Courses e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="coursesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="coursesesTable"
+                datasource="coursesesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="coursesesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="id"/>
+                <column id="description"/>
+                <column id="completeDescription"/>
+            </columns>
+            <rows datasource="coursesesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="coursesesTable.create"/>
+                <button id="editBtn"
+                        action="coursesesTable.edit"/>
+                <button id="removeBtn"
+                        action="coursesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="clarionschool$Classes.browse"
+            template="com/company/clarionschool/web/classes/classes-browse.xml"/>
+    <screen id="clarionschool$Classes.edit"
+            template="com/company/clarionschool/web/classes/classes-edit.xml"/>
+    <screen id="clarionschool$Majors.browse"
+            template="com/company/clarionschool/web/majors/majors-browse.xml"/>
+    <screen id="clarionschool$Majors.edit"
+            template="com/company/clarionschool/web/majors/majors-edit.xml"/>
+    <screen id="clarionschool$Students.browse"
+            template="com/company/clarionschool/web/students/students-browse.xml"/>
+    <screen id="clarionschool$Students.edit"
+            template="com/company/clarionschool/web/students/students-edit.xml"/>
+    <screen id="clarionschool$Teachers.browse"
+            template="com/company/clarionschool/web/teachers/teachers-browse.xml"/>
+    <screen id="clarionschool$Teachers.edit"
+            template="com/company/clarionschool/web/teachers/teachers-edit.xml"/>
+    <screen id="clarionschool$Courses.browse"
+            template="com/company/clarionschool/web/courses/courses-browse.xml"/>
+    <screen id="clarionschool$Courses.edit"
+            template="com/company/clarionschool/web/courses/courses-edit.xml"/>
+    <screen id="clarionschool$Enrollment.browse"
+            template="com/company/clarionschool/web/enrollment/enrollment-browse.xml"/>
+    <screen id="clarionschool$Enrollment.edit"
+            template="com/company/clarionschool/web/enrollment/enrollment-edit.xml"/>
+</screen-config>

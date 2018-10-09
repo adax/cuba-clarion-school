@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.clarionschool.web.students.StudentsBrowse"
+        focusComponent="studentsesTable"
+        lookupComponent="studentsesTable"
+        messagesPack="com.company.clarionschool.web.students">
+    <dsContext>
+        <groupDatasource id="studentsesDs"
+                         class="com.company.clarionschool.entity.Students"
+                         view="students-view">
+            <query>
+                <![CDATA[select e from clarionschool$Students e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="studentsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="studentsesTable"
+                datasource="studentsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="studentsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="firstName"/>
+                <column id="lastName"/>
+                <column id="address"/>
+                <column id="address2"/>
+                <column id="city"/>
+                <column id="state"/>
+                <column id="zip"/>
+                <column id="telephone"/>
+                <column id="major"/>
+                <column id="gradYear"/>
+            </columns>
+            <rows datasource="studentsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="studentsesTable.create"/>
+                <button id="editBtn"
+                        action="studentsesTable.edit"/>
+                <button id="removeBtn"
+                        action="studentsesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,1 @@
+alter table CLARIONSCHOOL_ENROLLMENT drop column FINAL_EXAM_COPY__U44750 cascade ;
