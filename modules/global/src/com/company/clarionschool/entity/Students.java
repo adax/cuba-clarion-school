@@ -19,7 +19,7 @@ public class Students extends BaseStringIdEntity {
     private static final long serialVersionUID = -9041703000566327567L;
 
     @Id
-    @Column(name = "NUMBER_", nullable = false, length = 10)
+    @Column(name = "NUMBER_", nullable = false, length = 11)
     protected String number;
 
     @Column(name = "FIRST_NAME", length = 20)

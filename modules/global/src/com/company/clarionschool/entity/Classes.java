@@ -19,7 +19,7 @@ public class Classes extends BaseStringIdEntity {
     private static final long serialVersionUID = 4442384223365784328L;
 
     @Id
-    @Column(name = "CLASS_NUMBER", nullable = false, length = 10)
+    @Column(name = "CLASS_NUMBER", nullable = false, length = 8)
     protected String classNumber;
 
     @Lookup(type = LookupType.DROPDOWN, actions = {"lookup"})
